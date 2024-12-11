@@ -9,9 +9,9 @@ const port = 8080;
 
 // Set template engine EJS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'dist', 'views'));
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'dist', 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 const client = new Client();

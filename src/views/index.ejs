@@ -61,7 +61,19 @@ button:hover {
             <div id="qrcode"></div>
             <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
             <script type="text/javascript">
+                // Generate the QR code
                 new QRCode(document.getElementById("qrcode"), "<%= qrCode %>");
+
+                // Set an interval to check for a new QR code every 2 seconds
+                setInterval(function() {
+                    var currentQrCode = document.getElementById("qrcode").innerHTML;
+                    var newQrCode = "<%= qrCode %>";
+
+                    // If QR code changes, reload the page
+                    if (currentQrCode !== newQrCode) {
+                        location.reload();
+                    }
+                }, 10000);  // Check every 10 seconds
             </script>
         <% } else { %>
             <p>Logging in...</p>
