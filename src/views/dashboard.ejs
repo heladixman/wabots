@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1><%= message %></h1>
+        <h3>Welcome to your WhatsApp Dashboard!</h3>
+        <form action="/send-message" method="POST">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" name="phoneNumber" placeholder="e.g. 6281234567890" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea name="message" placeholder="Type your message here..." required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
